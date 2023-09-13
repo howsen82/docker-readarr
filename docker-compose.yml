@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  readarr:
+    container_name: readarr
+    image: hotio/readarr:nightly
+    environment:
+      - PUID=1026
+      - PGID=100
+      - TZ=Asia/Kuching
+    volumes:
+      - /data/readarr/config:/config
+    ports:
+      - 8787:8787
+    restart: always
